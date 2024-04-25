@@ -1,7 +1,7 @@
 define systemenv::var (
   Enum['present','absent'] $ensure                    = 'present',
-  Optional[Regexp[/^[a-zA-Z][a-zA-Z0-9_]+/]] $varname = $name,
-  Optional[Regexp[/(^\'.*\'$)|(^\"\.*\"$)/]] $value   = undef,
+  Optional[Pattern[/^[a-zA-Z][a-zA-Z0-9_]+/]] $varname = $name,
+  Optional[Pattern[/(^\'.*\'$)|(^\"\.*\"$)/]] $value   = undef,
 ) {
   require systemenv
   
